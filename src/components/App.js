@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import logo from '../css/images/logo.svg';
 import '../css/App.css';
+import { Chart } from 'react-google-charts';
 
 class App extends Component {
   render() {
@@ -10,9 +11,15 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Lacuna Learning</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Chart
+          chartType="ScatterChart"
+          data={[['Age', 'Weight'], [8, 12], [4, 5.5]]}
+          options={{}}
+          graph_id="ScatterChart"
+          width="100%"
+          height="400px"
+          legend_toggle
+        />
       </div>
     );
   }
